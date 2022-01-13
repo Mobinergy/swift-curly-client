@@ -19,6 +19,12 @@
 
 import CCurlyCURL
 
+#if canImport(Darwin)
+import Darwin
+#elseif canImport(Glibc)
+import Glibc
+#endif
+
 extension CURLRequest.Option {
 
     private func headerAdd(_ curl: CURL, optName: CURLRequest.Header.Name, optValue: String) {
